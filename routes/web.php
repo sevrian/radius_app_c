@@ -33,6 +33,6 @@ Route::post('/postlogin', 'AuthController@postlogin');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', 'DashboardController@index');
     Route::get('/ubahpassword', 'AuthController@ubahpass');
-    Route::patch('/changepass', 'AuthController@updatepassword');
+    Route::patch('/changepass', 'AuthController@updatePassword');
     Route::get('/logout', 'AuthController@logout');
 });

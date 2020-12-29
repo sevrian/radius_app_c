@@ -31,8 +31,9 @@
               <div class="card-header"><h4>Ubah Password</h4></div>
 
               <div class="card-body">
-                <form method="POST" action="action="/changepass" class="needs-validation" novalidate="">
-                  
+                <form method="POST" action="/changepass" class="needs-validation" novalidate="">
+                  @method('patch')
+                  @csrf
 
                   <div class="form-group">
                     <div class="d-block">
@@ -62,7 +63,7 @@
                   
                   <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                      Login
+                      simpan
                     </button>
                   </div>
                 </form>

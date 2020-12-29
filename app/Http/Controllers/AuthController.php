@@ -21,12 +21,12 @@ class AuthController extends Controller
         if (Auth::attempt($request->only('username', 'password'))) {
             return redirect('/dashboard');
         }
-        return redirect('/login');
+        return redirect('/');
     }
     public function logout()
     {
         Auth::logout();
-        return redirect('/login');
+        return redirect('/');
     }
 
     public function ubahpass()
