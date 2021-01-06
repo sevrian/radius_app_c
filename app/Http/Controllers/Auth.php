@@ -7,32 +7,25 @@ use Illuminate\Http\Request;
 
 class Auth extends Controller
 {
-    public function login()
-    {
-        return view('theme.login');
-    }
-
     public function postlogin(Request $request)
     {
-       dd( $users = DB::table('radcheck')->select('username','value')->where('attribute', 'Cleartext-Password')->get());
+        $this->validate(
+            $request,
 
-        $request->validate(
+            ['username' => 'required'],
 
-
-            [
-                'username' => 'required',
-                'value' => 'required'
-            ]
-
+            ['password' => 'required']
 
         );
 
-        $username = $request->input('username');
-        $pass = $request->input('value');
+        $user = $request->input('username');
+        $pass = $request->input('password');
+
+        $users = DB::table('radcheck')->select('username','value')->where('attribute', 'Cleartext-Password')->pluck('username', 'value')->dd();
 
 
+        if ($users->username == $user and $users->value == $pass) {
 
-        if ($users->username == $username and $users->value == $pass) {
             return redirect('/dashboard');
         } else {
 
