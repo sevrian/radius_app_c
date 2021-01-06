@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
   <!-- CSS Libraries -->
- // <link rel="stylesheet" href="../node_modules/bootstrap-social/bootstrap-social.css">
+  {{-- <link rel="stylesheet" href="../node_modules/bootstrap-social/bootstrap-social.css"> --}}
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{ url ('assets/css/style.css')}}">
@@ -31,11 +31,11 @@
               {{-- <div class="card-header"><h4>Login</h4></div> --}}
 
               <div class="card-body">
-                <form method="POST" action="/postlogin" class="needs-validation" novalidate="">
+                <form method="POST" action="postlogin" class="needs-validation" novalidate="">
                   @csrf
                   <div class="form-group">
-                    <label for="email">Username</label>
-                    <input  type="text" class="form-control" name="username" tabindex="1" required autofocus>
+                    <label for="username">Username</label>
+                    <input  type="text" class="form-control" name="username" tabindex="1" required >
                     <div class="invalid-feedback">
                       Please fill in your email
                     </div>
@@ -43,14 +43,14 @@
 
                   <div class="form-group">
                     <div class="d-block">
-                    	<label for="password" class="control-label">Password</label>
+                    	<label for="value" class="control-label">Password</label>
                       {{-- <div class="float-right">
                         <a href="auth-forgot-password.html" class="text-small">
                           Forgot Password?
                         </a>
                       </div> --}}
                     </div>
-                    <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
+                    <input type="text" class="form-control" name="value" tabindex="2" required>
                     <div class="invalid-feedback">
                       please fill in your password
                     </div>

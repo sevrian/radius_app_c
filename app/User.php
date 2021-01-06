@@ -16,12 +16,12 @@ class User extends Authenticatable
      * @var array
      */
 
-    protected $table = 'permanent_users';
+    protected $table = 'radcheck';
 
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'username', 'email', 'password', 'surename', 'realm_id', 'profile_id',
+        'username', 'value',
     ];
 
     /**
@@ -30,7 +30,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'value', 'remember_token',
     ];
 
     /**

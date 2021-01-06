@@ -26,8 +26,8 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 //     Route::get('/client/home', 'Client\HomeController@index');
 // });
 //Route::get('/', 'AuthController@showFormLogin')->name('login');
-Route::get('/', 'AuthController@login')->name('login');
-Route::post('/postlogin', 'AuthController@postlogin');
+Route::get('/', 'Auth@login')->name('login');
+Route::post('/postlogin', 'Auth@postlogin');
 
 
 Route::group(['middleware' => 'auth'], function () {
